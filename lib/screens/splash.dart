@@ -45,7 +45,7 @@ class SplashScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         onPressed: () {
-          Future.delayed(const Duration(milliseconds: 500), () {
+          Future.delayed(const Duration(milliseconds: 300), () {
             customSigninDialog(context);
           });
         },
@@ -68,6 +68,15 @@ Future<Object?> customSigninDialog(context) {
       barrierDismissible: true,
       barrierLabel: "Sing in",
       context: context,
+      transitionBuilder: (context, animation, secondaryAnimation, child) {
+        return SlideTransition(
+          position:
+              Tween<Offset>(begin: const Offset(-1, 0), end: const Offset(0, 0))
+                  .animate(animation),
+          child: child,
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 300),
       pageBuilder: (context, animation, secondaryAnimation) => Center(
             child: Container(
               height: MediaQuery.of(context).size.height * 0.7,
