@@ -82,24 +82,6 @@ class SplashScreen extends StatelessWidget {
           ),
         )),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: FloatingActionButton.extended(
-      //   backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-      // onPressed: () {
-      //   Future.delayed(const Duration(milliseconds: 300), () {
-      //     customSigninDialog(context);
-      //   });
-      // },
-      //   label: Text(
-      //     "Start & Share",
-      //     style: Theme.of(context).textTheme.titleLarge,
-      //   ),
-      //   icon: Icon(
-      //     Icons.arrow_forward,
-      //     size: 35,
-      //     color: Theme.of(context).colorScheme.onPrimaryContainer,
-      //   ),
-      // ),
     );
   }
 }
@@ -133,15 +115,50 @@ Future<Object?> customSigninDialog(context) {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
-                        child: Text(
-                          "Sign In",
-                          style: Theme.of(context)
-                              .textTheme
-                              .displaySmall!
-                              .apply(color: Colors.black, fontWeightDelta: 3),
-                        ),
+                      Stack(
+                        children: [
+                          Positioned(
+                            right: 10,
+                            child: Container(
+                              width: 45,
+                              height: 45,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .primaryContainer,
+                                    width: 2),
+                                // color: Theme.of(context)
+                                //     .colorScheme
+                                //     .primaryContainer,
+                              ),
+                              child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.close,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .primaryContainer,
+                                  )),
+                            ),
+                          ),
+                          Center(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 16.0),
+                              child: Text(
+                                "Sign In",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .displaySmall!
+                                    .apply(
+                                        color: Colors.black,
+                                        fontWeightDelta: 3),
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -288,11 +305,8 @@ Future<Object?> customSigninDialog(context) {
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
                             child: SignInWithAppleButton(onPressed: () {}),
                           ),
-                          // SocialLoginButton(
-                          //     buttonType: SocialLoginButtonType.apple,
-                          //     onPressed: () {}),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
