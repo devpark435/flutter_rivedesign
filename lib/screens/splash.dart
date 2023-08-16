@@ -28,14 +28,20 @@ class SplashScreen extends StatelessWidget {
               ),
               Text(
                 "Take a picture",
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context)
+                    .textTheme
+                    .displayMedium!
+                    .apply(color: Colors.white, fontWeightDelta: 5),
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                "And share it",
-                style: Theme.of(context).textTheme.displayMedium,
+                "& share it",
+                style: Theme.of(context)
+                    .textTheme
+                    .displayMedium!
+                    .apply(color: Colors.white, fontWeightDelta: 5),
               ),
             ],
           ),
@@ -99,7 +105,7 @@ Future<Object?> customSigninDialog(context) {
                           style: Theme.of(context)
                               .textTheme
                               .displaySmall!
-                              .apply(color: Colors.black),
+                              .apply(color: Colors.black, fontWeightDelta: 3),
                         ),
                       ),
                       Padding(
