@@ -214,7 +214,8 @@ Future<Object?> customSigninDialog(context) {
                                     .apply(
                                         color: Theme.of(context)
                                             .colorScheme
-                                            .onPrimaryContainer),
+                                            .onPrimaryContainer,
+                                        fontWeightDelta: 2),
                               ),
                             ),
                           ),
