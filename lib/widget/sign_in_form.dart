@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive_flutter/screens/home.dart';
 
 class SignInFrom extends StatefulWidget {
   const SignInFrom({super.key});
@@ -67,15 +68,19 @@ class _SignInFromState extends State<SignInFrom> {
               padding: const EdgeInsets.symmetric(vertical: 10.0),
               child: ElevatedButton.icon(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    setState(() {
-                      isSignIn = "check";
-                    });
-                  } else {
-                    setState(() {
-                      isSignIn = "error";
-                    });
-                  }
+                  // if (_formKey.currentState!.validate()) {
+                  //   setState(() {
+                  //     isSignIn = "check";
+                  //   });
+                  // } else {
+                  //   setState(() {
+                  //     isSignIn = "error";
+                  //   });
+                  // }
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
