@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:rive_flutter/screens/home.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -11,7 +12,7 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   int _selectIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    Text("Home"),
+    HomeScreen(),
     Text("Location"),
     Text("Category"),
     Text("User"),
