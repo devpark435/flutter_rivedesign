@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rive_flutter/screens/bottom_nav.dart';
+import 'package:rive_flutter/widget/bottom_nav.dart';
 
 class SignInFrom extends StatefulWidget {
   const SignInFrom({super.key});
