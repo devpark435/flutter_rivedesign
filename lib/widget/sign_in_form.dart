@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rive_flutter/screens/home.dart';
+import 'package:rive_flutter/screens/bottom_nav.dart';
 
 class SignInFrom extends StatefulWidget {
   const SignInFrom({super.key});
@@ -80,7 +80,7 @@ class _SignInFromState extends State<SignInFrom> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomeScreen()));
+                          builder: (context) => const BottomNavigation()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
