@@ -156,7 +156,71 @@ class HomeFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [],
+      children: [
+        Container(
+          margin: const EdgeInsets.only(left: 10, bottom: 10),
+          alignment: Alignment.centerLeft,
+          width: double.infinity,
+          child: Text(
+            "Picture tips",
+            style: Theme.of(context).textTheme.displaySmall!.apply(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontWeightDelta: 3,
+                ),
+          ),
+        ),
+        Expanded(
+            child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: GridView(
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              children: [
+                tipCard(context, "City"),
+                tipCard(context, "Scenery"),
+                tipCard(context, "Model"),
+                tipCard(context, "Food")
+              ]),
+        ))
+      ],
     );
   }
+}
+
+Widget tipCard(context, String title) {
+  return Card(
+    color: Theme.of(context).colorScheme.primaryContainer,
+    child: Column(
+      children: [
+        Expanded(
+            flex: 4,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: const DecorationImage(
+                    image: AssetImage('assets/images/splash.gif'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            )),
+        Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: Text(
+                  title,
+                  style: Theme.of(context).textTheme.bodyLarge!.apply(
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontWeightDelta: 3),
+                ),
+              ),
+            ))
+      ],
+    ),
+  );
 }
